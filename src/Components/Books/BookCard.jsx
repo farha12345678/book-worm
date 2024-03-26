@@ -1,11 +1,14 @@
 import { CiStar } from "react-icons/ci";
+import { Link } from "react-router-dom";
+import PropTypes from 'prop-types'; 
 
 
-const BookCard = ({ book }) => {
-    const { bookName, author, image, tags, category , rating } = book;
+const BookCard = ({book }) => {
+    const {bookId, bookName, author, image, tags, category, rating } = book;
     return (
         <div>
-            <div className="card w-96 bg-base-100 shadow-xl">
+           <Link to={`/book/${bookId}`} className="card w-96 bg-base-100 shadow-xl transition border-2 hover:scale-105">
+            
                 <figure className="px-10 pt-10">
                     <img src={image} alt="Shoes" className="rounded-xl h-72" />
                 </figure>
@@ -26,9 +29,14 @@ const BookCard = ({ book }) => {
                         <p><CiStar></CiStar></p>
                     </div>
                 </div>
+                </Link>
             </div>
-        </div>
+    
+        
     );
 };
+BookCard.propTypes = {
+    book : PropTypes.object
+}
 
 export default BookCard;
