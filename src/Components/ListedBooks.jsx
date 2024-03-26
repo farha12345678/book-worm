@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 const ListedBooks = () => {
     const [tableIndex , setTableIndex] = useState(0)
@@ -10,9 +10,11 @@ const ListedBooks = () => {
             </div>
             {/* tab */}
             <div role="tablist" className="tabs tabs-lifted text-center flex ml-20">
-                <Link onClick={() => setTableIndex(0)} role="tab" className={`${tableIndex === 0? 'tab-active':'tab' }`}>Read Books</Link>
-                <Link onClick={() => setTableIndex(1)} role="tab" className={`${tableIndex === 1? 'tab-active':'tab' }`}>Wishlist Books</Link>
+                <Link to='' onClick={() => setTableIndex(0)} role="tab" className={`${tableIndex === 0? 'tab-active border border-b-0 font-semibold':'tab' }`}>Read Books</Link>
+                <Link to={`wishlist`} onClick={() => setTableIndex(1)} role="tab" className={`${tableIndex === 1? 'tab-active border border-b-0 font-semibold':'tab' }`}>Wishlist Books</Link>
+               
             </div>
+            <Outlet/>
         </div>
     );
 };

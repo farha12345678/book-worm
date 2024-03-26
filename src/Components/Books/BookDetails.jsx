@@ -4,12 +4,20 @@
 
 
 import { useLoaderData, useParams } from "react-router-dom";
+import {  WishBooks, readBooks } from "../../Utility/localstorage";
 
 
 const BookDetails = () => {
 
+    const handleRead = book => {
+        readBooks(book)
+    }
+    const handleWishList = book => {
+        WishBooks(book)
+    }
+
     const books = useLoaderData()
-    console.log(books);
+    
     const { id } = useParams()
     const book = books.find(book => book.bookId === id)
     return (
@@ -33,8 +41,8 @@ const BookDetails = () => {
                             <p><small>Rating :  {book.rating}</small></p>
                         </div>
                         <div className="flex gap-x-5 mt-10">
-                            <button className="btn btn-primary">Read</button>
-                            <button className="btn">Wishlist</button>
+                            <button onClick={() => handleRead(book)} className="btn btn-primary">Read</button>
+                            <button onClick={() => handleWishList(book)} className="btn">Wishlist</button>
                         </div>
                     </div>
                 </div>
