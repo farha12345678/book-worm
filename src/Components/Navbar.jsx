@@ -28,8 +28,8 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <div className="navbar-end mr-10">
-                    <a className="btn mr-2 bg-green-400 text-white text-lg">Sign In</a>
+                <div className="navbar-end md:mr-10">
+                    <a className="btn  md:mr-2 bg-green-400 text-white text-lg">Sign In</a>
                     <a className="btn bg-blue-400 text-white text-lg">Sign Up</a>
                 </div>
             </div>
