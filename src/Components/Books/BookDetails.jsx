@@ -32,7 +32,11 @@ const BookDetails = () => {
                         <p><small>{book.category}</small></p>
                         <hr />
                         <p className="py-6">{book.review}</p>
-                        <p><small><span>Tag:</span>{book.tags}</small></p>
+                        <div className="flex gap-x-5">
+                    {book.tags.map(tag => <a key={tag} href="http://" target="_blank" rel="noopener noreferrer">#{tag}</a>) }
+                    
+                    
+                </div>
                         <hr />
                         <div>
                             <p><small>Number of Pages : {book.totalPages}</small></p>

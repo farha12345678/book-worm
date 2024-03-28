@@ -17,12 +17,14 @@ import BookDetails from './Components/Books/BookDetails';
 import ReadBooks from './Components/WishlistBooks/ReadBooks.jsx/ReadBooks';
 import WishlistBooks from './Components/WishlistBooks/WishlistBooks';
 import {createBrowserRouter } from "react-router-dom";
+import ErrorPage from './Components/ErrorPage';
   
 
  const router = createBrowserRouter([
     {
       path: "/",
       element: <Root></Root>,
+      errorElement:<ErrorPage></ErrorPage>,
   
       children: [
         {
@@ -53,7 +55,8 @@ import {createBrowserRouter } from "react-router-dom";
   
         {
           path: "/pagesToRead",
-          element: <PagesToRead></PagesToRead>
+          element: <PagesToRead></PagesToRead>,
+          loader: () => fetch('./data.json'),
         }
       ]
     },

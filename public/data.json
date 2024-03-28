@@ -1,7 +1,7 @@
 [
     {
       "bookId": "001",
-      "bookName": "The Great Gatsby",
+      "bookName": "1984",
       "author": "F. Scott Fitzgerald",
       "image": "https://i.ibb.co/tLQvWXx/1984.jpg",
       "review": "A timeless classic exploring the decadence and moral ambiguity of the Jazz Age.",
@@ -14,7 +14,7 @@
     },
     {
       "bookId": "002",
-      "bookName": "1984",
+      "bookName": "The Catcher in the Rye",
       "author": "George Orwell",
       "image": "https://i.ibb.co/2ShPb0D/The-Catcher-in-the-Rye.jpg",
       "review": "A dystopian masterpiece that remains eerily relevant in today's society.",
@@ -27,7 +27,7 @@
     },
     {
       "bookId": "003",
-      "bookName": "The Catcher in the Rye",
+      "bookName": "Pride and Prejudice",
       "author": "J.D. Salinger",
       "image": "https://i.ibb.co/hLbCnPZ/Pride-and-Prejudice.jpg",
       "review": "A poignant exploration of teenage angst and the struggle for identity.",
@@ -40,7 +40,7 @@
     },
     {
       "bookId": "004",
-      "bookName": "To Kill a Mockingbird",
+      "bookName": "The Hobbit",
       "author": "Harper Lee",
       "image": "https://i.ibb.co/9N6LbcW/The-Hobbit.jpg",
       "review": "A powerful narrative tackling racial injustice and moral growth in the American South.",
@@ -53,7 +53,7 @@
     },
     {
       "bookId": "005",
-      "bookName": "Pride and Prejudice",
+      "bookName": "The Great Gatsby",
       "author": "Jane Austen",
       "image": "https://i.ibb.co/ZMcxWrn/The-Great-Gatsby.png",
       "review": "A timeless romance that explores the complexities of societal expectations and personal relationships.",
@@ -66,7 +66,7 @@
     },
     {
       "bookId": "006",
-      "bookName": "The Hobbit",
+      "bookName": "To  Kill a Mockingbird",
       "author": "J.R.R. Tolkien",
       "image": "https://i.ibb.co/f0t4YqN/To-Kill-a-Mockingbird.jpg",
       "review": "An enchanting adventure through Middle-earth, perfect for readers of all ages.",

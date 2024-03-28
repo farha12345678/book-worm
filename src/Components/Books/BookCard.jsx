@@ -4,29 +4,31 @@ import PropTypes from 'prop-types';
 
 
 const BookCard = ({book }) => {
-    const {bookId, bookName, author, image, tags, category, rating } = book;
+    const {bookId, bookName, author, image, tags, category, rating  } = book;
     return (
         <div>
-           <Link to={`/book/${bookId}`} className="card w-96 bg-base-100 shadow-xl transition border-2 hover:scale-105">
+           <Link to={`/book/${bookId}`} className="card mx-auto my-10 w-96 h-[500px] bg-base-100 shadow-xl transition border-2 hover:scale-105 ">
             
-                <figure className="px-10 pt-10">
+                <figure className="px-10 pt-10 ">
                     <img src={image} alt="Shoes" className="rounded-xl h-72" />
                 </figure>
-                <div className="flex justify-between">
-                    <p><small>{tags}</small></p>
-                    <p><small>{tags}</small></p>
+                <div className="flex gap-x-2 mt-5 ml-5">
+                    {tags.map(tag => <a className="border rounded-3xl  bg-base-200  text-green-500" key={tag} href="http://" target="_blank" rel="noopener noreferrer">#{tag}</a>) }
+                    
+                    
                 </div>
+               
                 <div>
-                    <h2 className="card-title">{bookName}</h2>
-                    <p><span>By:</span>{author}</p>
+                    <h2 className="card-title ml-5 text-xl mt-2 font-bold">{bookName}</h2>
+                    <p className="ml-5 text-base font-normal my-4"><span>By:</span>{author}</p>
 
                 </div>
                 <hr />
-                <div className="flex justify-between">
-                    <p><small>{category}</small></p>
-                    <div className="flex">
+                <div className="flex justify-between ml-5 my-4 text-gray-600 ">
+                    <p className="text-xl font-medium"><small>{category}</small></p>
+                    <div className="flex gap-x-2 mr-2 ">
                         <p>{rating}</p>
-                        <p><CiStar></CiStar></p>
+                        <p className="text-xl"><CiStar></CiStar></p>
                     </div>
                 </div>
                 </Link>
