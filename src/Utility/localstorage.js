@@ -2,20 +2,20 @@ import { toast } from "react-toastify"
 
 
 export const getBooks = () => {
-    let books = []
+    
     const storedBooks = localStorage.getItem('book') 
     if(storedBooks){
-        books = JSON.parse(storedBooks)
+     return  JSON.parse(storedBooks)
     }
-    return books;
+    
 }
 export const getWish = () => {
-    let books = []
+    
     const wishedBooks = localStorage.getItem('wish') 
     if(wishedBooks){
-        books = JSON.parse(wishedBooks)
+        return JSON.parse(wishedBooks)
     }
-    return books;
+    
 }
 // readed books
 export const readBooks = (book) => {
