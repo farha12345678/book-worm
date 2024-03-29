@@ -4,7 +4,7 @@ import { IoPeopleOutline } from "react-icons/io5";
 import { TbPageBreak } from "react-icons/tb";
 
 const ReadCard = ({ book }) => {
-    // const { bookName, image, author, tags, yearOfPublishing ,publisher, totalPages , rating , category } = book;
+   
     
     return (
         <div>
