@@ -34,7 +34,7 @@ import ErrorPage from './Components/ErrorPage';
         {
           path: "/book/:id",
           element: <BookDetails></BookDetails>,
-          loader: () => fetch('./data.json'),
+          loader: () => fetch('/data.json'),
           
         },
         {
@@ -43,11 +43,13 @@ import ErrorPage from './Components/ErrorPage';
           children: [
             {
               index: true,
-              element: <ReadBooks></ReadBooks>
+              element: <ReadBooks></ReadBooks>,
+              loader:() => fetch('/data.json')
             },
             {
               path: "wishlist",
-              element: <WishlistBooks></WishlistBooks>
+              element: <WishlistBooks></WishlistBooks>,
+              loader: () => fetch('/data.json')
             }
           ]
          
@@ -56,7 +58,7 @@ import ErrorPage from './Components/ErrorPage';
         {
           path: "/pagesToRead",
           element: <PagesToRead></PagesToRead>,
-          loader: () => fetch('./data.json'),
+          loader: () => fetch('/data.json'),
         }
       ]
     },

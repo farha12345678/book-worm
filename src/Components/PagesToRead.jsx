@@ -1,42 +1,27 @@
-import { useEffect, useState } from "react";
-import { getBooks } from "../Utility/localstorage";
 import { useLoaderData } from "react-router-dom";
-import PageChart from "./PageChart";
+import { useEffect, useState } from "react";
 
-
-
-
-
+import ReadChart from "./ReadChart";
+import { getAddedBooks } from "../Utility/localstorage";
 
 const PagesToRead = () => {
 
-
     const books = useLoaderData();
 
-    const [addedBook, setAddedBooks] = useState([])
-
-    
+    const [addedBooks, setAddedBooks] = useState([]);
 
     useEffect(() => {
-        const storedBookId = getBooks()
-
+        const storedBookId = getAddedBooks();
         if (books.length > 0) {
-
-            const readBook = books.filter((book) => storedBookId.includes(book.bookId))
-            setAddedBooks(readBook);
-            
-
+            const readBooks = books.filter((book) => storedBookId.includes(book.bookId));
+            setAddedBooks(readBooks);
         }
     }, [books]);
-
-   
     return (
         <div className="">
-        <PageChart data={addedBook}></PageChart>
+            <ReadChart data={addedBooks}></ReadChart>
         </div>
     );
 };
-
-
 
 export default PagesToRead;

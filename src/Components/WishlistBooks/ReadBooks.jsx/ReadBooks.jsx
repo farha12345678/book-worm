@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { getBooks } from "../../../Utility/localstorage";
+import { getAddedBooks } from "../../../Utility/localstorage";
 import ReadCard from "../../ReadBooks/ReadCard";
+import { useLoaderData } from "react-router-dom";
 
 
 const ReadBooks = () => {
@@ -18,14 +19,17 @@ const ReadBooks = () => {
             setDisplayBook(fantasyBook)
         }
     }
-
+    const books = useLoaderData()
 
     useEffect(() => {
-        const storedBooks = getBooks()
-        setBooks(storedBooks)
-        setDisplayBook(storedBooks)
+        const storedBookId = getAddedBooks()
+        if (books.length > 0) {
+            const storedBooks = books.filter((book) => storedBookId.includes(book.bookId));
+            setBooks(storedBooks)
+            setDisplayBook(storedBooks)
+        } 
+    }, [books])
 
-    }, [])
     return (
         <div>
             <div className="dropdown text-center flex justify-center">

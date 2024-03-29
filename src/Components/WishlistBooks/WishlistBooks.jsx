@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
-import { getWish } from "../../Utility/localstorage";
 
 
 import ReadCard from "../ReadBooks/ReadCard";
+import { getWishedBooks } from "../../Utility/localStorageWish";
+import { useLoaderData } from "react-router-dom";
 
 
 const WishlistBooks = () => {
     const [wish, setWish] = useState([])
     const [displayBook, setDisplayBook] = useState([])
+
 
     const handleBooks = (filter) => {
         if (filter === 'all') {
@@ -20,12 +22,18 @@ const WishlistBooks = () => {
             setDisplayBook(fantasyBook)
         }
     }
-
+    const books = useLoaderData()
     useEffect(() => {
-        const storedWish = getWish()
-        setWish(storedWish)
-
-    }, [])
+        const wishedBookId = getWishedBooks();
+        if (books.length > 0) {
+          const wishedBookList = books.filter((book) =>
+            wishedBookId.includes(book.bookId)
+          );
+          setWish(wishedBookList)
+          setDisplayBook(wishedBookList);
+          
+        }
+      }, [books]);
     return (
         <div>
             <div className="dropdown text-center flex justify-center">
@@ -36,11 +44,11 @@ const WishlistBooks = () => {
                     <li onClick={() => handleBooks('fantasy')}><a>Fantasy</a></li>
                 </ul>
             </div>
-        <div>
-            {
-                displayBook.map((book) => <ReadCard key={book.bookId} book={book}></ReadCard>)
-            }
-        </div>
+            <div>
+                {
+                    displayBook.map((book) => <ReadCard key={book.bookId} book={book}></ReadCard>)
+                }
+            </div>
         </div>
     );
 };
